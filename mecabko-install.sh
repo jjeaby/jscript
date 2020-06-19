@@ -5,6 +5,8 @@ cd /tmp/mecab-0.996-ko-0.9.2
 make
 sudo make install
 
+sudo ldconfig /usr/local 
+
 wget -O /tmp/mecab-ko-dic-2.1.1-20180720.tar.gz https://bitbucket.org/eunjeon/mecab-ko-dic/downloads/mecab-ko-dic-2.1.1-20180720.tar.gz
 tar -zxvf /tmp/mecab-ko-dic-2.1.1-20180720.tar.gz -C /tmp
 cd /tmp/mecab-ko-dic-2.1.1-20180720

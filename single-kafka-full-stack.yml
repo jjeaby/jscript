@@ -1,4 +1,5 @@
-version: '2.1'services:
+version: '2.1'
+services:
   zoo1:
     image: zookeeper:3.4.9
     restart: unless-stopped
@@ -28,7 +29,7 @@ version: '2.1'services:
     volumes:
       - ./full-stack/kafka1/data:/var/lib/kafka/data
     depends_on:
-      - zoo1  
+      - zoo1
   kafka-schema-registry:
     image: confluentinc/cp-schema-registry:5.5.0
     hostname: kafka-schema-registry
@@ -40,7 +41,7 @@ version: '2.1'services:
       SCHEMA_REGISTRY_LISTENERS: http://0.0.0.0:8081
     depends_on:
       - zoo1
-      - kafka1  
+      - kafka1
   schema-registry-ui:
     image: landoop/schema-registry-ui:0.9.4
     hostname: kafka-schema-registry-ui
@@ -50,7 +51,7 @@ version: '2.1'services:
       SCHEMAREGISTRY_URL: http://kafka-schema-registry:8081/
       PROXY: "true"
     depends_on:
-      - kafka-schema-registry  
+      - kafka-schema-registry
   kafka-rest-proxy:
     image: confluentinc/cp-kafka-rest:5.5.0
     hostname: kafka-rest-proxy
@@ -65,7 +66,7 @@ version: '2.1'services:
     depends_on:
       - zoo1
       - kafka1
-      - kafka-schema-registry  
+      - kafka-schema-registry
   kafka-topics-ui:
     image: landoop/kafka-topics-ui:0.9.4
     hostname: kafka-topics-ui
@@ -78,7 +79,7 @@ version: '2.1'services:
       - zoo1
       - kafka1
       - kafka-schema-registry
-      - kafka-rest-proxy  
+      - kafka-rest-proxy
   ksqldb-server:
     image: confluentinc/cp-ksqldb-server:5.5.0
     hostname: ksqldb-server

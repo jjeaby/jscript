@@ -77,7 +77,7 @@ set termencoding=utf-8
 " 커서가 있는 줄을 강조함
 set cursorline
 " 상태바 표시를 항상한다
-set laststatus=2 
+set laststatus=2
 set statusline=\ %<%l:%v\ [%P]%=%a\ %h%m%r\ %F\
 " 검색 설정
 set ignorecase
@@ -94,3 +94,4 @@ augroup markdown
     " set every new or read *.md buffer to use the markdown filetype
     autocmd BufRead,BufNew *.md setf markdown
 augroup END
+

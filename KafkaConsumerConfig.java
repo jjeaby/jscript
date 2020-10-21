@@ -35,7 +35,8 @@ public class KafkaConsumerConfig {
     props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "latest");
     props.put(ConsumerConfig.GROUP_ID_CONFIG, "topic_group");
     props.put(ConsumerConfig.FETCH_MAX_BYTES_CONFIG, 100000000);
-props.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, false);
+    
+    props.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, false);
     props.put(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, 20);
     props.put(ConsumerConfig.MAX_POLL_INTERVAL_MS_CONFIG, 600000);
     props.put(ConsumerConfig.HEARTBEAT_INTERVAL_MS_CONFIG, 1000);

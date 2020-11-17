@@ -5,6 +5,13 @@ cd /tmp/mecab-0.996-ko-0.9.2
 make
 sudo make install
 
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+	sudo update_dyld_shared_cache
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+	sudo update_dyld_shared_cache
+fi
+
+
 sudo ldconfig /usr/local 
 
 wget -O /tmp/mecab-ko-dic-2.1.1-20180720.tar.gz https://bitbucket.org/eunjeon/mecab-ko-dic/downloads/mecab-ko-dic-2.1.1-20180720.tar.gz

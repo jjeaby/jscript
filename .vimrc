@@ -30,6 +30,11 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/syntastic'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'nanotech/jellybeans.vim'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'cespare/vim-toml'
+Plugin 'elzr/vim-json'
+Plugin 'JamshedVesuna/vim-markdown-preview'
 call vundle#end()            " required
 "filetype plugin indent on    " required
 "NERDTree ON 단축키를 "\nt"로 설정
@@ -94,4 +99,17 @@ augroup markdown
     " set every new or read *.md buffer to use the markdown filetype
     autocmd BufRead,BufNew *.md setf markdown
 augroup END
+
+
+" Vim SYNTAX EXTENSIONS
+let vim_markdown_preview_github=1
+" Disable Folding
+"let g:vim_markdown_folding_disabled = 1
+" YAML Front Matter
+"let g:vim_markdown_frontmatter = 1
+" TOML Front Matter
+"let g:vim_markdown_toml_frontmatter = 1
+" JSON Front Matter
+"let g:vim_markdown_json_frontmatter = 1
+
 
